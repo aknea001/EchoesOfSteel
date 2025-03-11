@@ -1,3 +1,80 @@
-[gd_scene format=3 uid="uid://sj277fgp4q3m"]
+[gd_scene load_steps=15 format=3 uid="uid://sj277fgp4q3m"]
+
+[ext_resource type="Texture2D" uid="uid://c8pgi3oqbkl37" path="res://game/world/overworld/sprites/1.boat_scene/bakgrund_0003_himmel 2.png" id="1_qlu2e"]
+[ext_resource type="Texture2D" uid="uid://b3hyhlnhccpjj" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0005_water.png" id="2_1cbet"]
+[ext_resource type="Texture2D" uid="uid://clfl1rfcj67l" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0006_sky.png" id="2_juj45"]
+[ext_resource type="Texture2D" uid="uid://kc3dlrvx2gp3" path="res://game/world/overworld/sprites/3.spruce_forest/bakgrundRødGrønnTrær_0002_gress 1.png" id="3_mec6g"]
+[ext_resource type="Texture2D" uid="uid://cx2v4wu8t2ann" path="res://game/world/overworld/sprites/3.spruce_forest/bakgrundRødGrønnTrær_0004_himmel 1.png" id="3_s4cmk"]
+[ext_resource type="Texture2D" uid="uid://cl4q60fh8vodh" path="res://game/world/overworld/sprites/4.tent_scene/telt_0004_sky.png" id="4_e6i1g"]
+[ext_resource type="Texture2D" uid="uid://b1hphs543r8gm" path="res://game/world/overworld/sprites/4.tent_scene/telt_0000_grass 1.png" id="4_k8iyu"]
+[ext_resource type="Texture2D" uid="uid://cexf6tt0vos2y" path="res://game/world/overworld/sprites/5.cave_entrance/cave_enerance_0000_grass.png" id="5_5hti7"]
+[ext_resource type="Texture2D" uid="uid://crrmfbihexo8i" path="res://game/world/overworld/sprites/5.cave_entrance/cave_enerance_0004_sky.png" id="5_fnxt0"]
+[ext_resource type="Texture2D" uid="uid://dp2bm1fdm4ixd" path="res://game/world/overworld/sprites/1.boat_scene/bakgrund_0001_gress 2.png" id="6_w1hx8"]
+[ext_resource type="Texture2D" uid="uid://b7pt2t6o2v8qe" path="res://game/world/overworld/sprites/1.boat_scene/bakgrund_0004_vann 2.png" id="7_5evy8"]
+[ext_resource type="Texture2D" uid="uid://n0p5bwx8nu30" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0001_grass.png" id="12_dhp7p"]
+[ext_resource type="Texture2D" uid="uid://vmbuaqsd7sxa" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0002_grass.png" id="13_ddgkd"]
+[ext_resource type="Texture2D" uid="uid://0jg7akpvkd1o" path="res://game/world/overworld/sprites/3.spruce_forest/bakgrundRødGrønnTrær_0003_gress_bak 1.png" id="14_23rbu"]
 
 [node name="Overworld" type="Node2D"]
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="BåtVann" type="Sprite2D" parent="Foreground"]
+position = Vector2(120, 108)
+texture = ExtResource("7_5evy8")
+
+[node name="RosaTre0005Water" type="Sprite2D" parent="Foreground"]
+position = Vector2(359, 96)
+texture = ExtResource("2_1cbet")
+
+[node name="BakgrundRødGrønnTrær0002Gress1" type="Sprite2D" parent="Foreground"]
+position = Vector2(600, 101)
+texture = ExtResource("3_mec6g")
+
+[node name="Telt0000Grass1" type="Sprite2D" parent="Foreground"]
+position = Vector2(840, 100)
+texture = ExtResource("4_k8iyu")
+
+[node name="CaveEnerance0000Grass" type="Sprite2D" parent="Foreground"]
+position = Vector2(1080, 99)
+texture = ExtResource("5_5hti7")
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="BåtScene" type="Sprite2D" parent="Background"]
+position = Vector2(120, 70)
+texture = ExtResource("1_qlu2e")
+
+[node name="RosaTre" type="Sprite2D" parent="Background"]
+position = Vector2(360, 37)
+texture = ExtResource("2_juj45")
+
+[node name="RødGrønnTrær" type="Sprite2D" parent="Background"]
+position = Vector2(600, 54.5)
+texture = ExtResource("3_s4cmk")
+
+[node name="Telt0004Sky" type="Sprite2D" parent="Background"]
+position = Vector2(840, 57.5)
+texture = ExtResource("4_e6i1g")
+
+[node name="CaveEnerance0004Sky" type="Sprite2D" parent="Background"]
+position = Vector2(1080, 57.5)
+texture = ExtResource("5_fnxt0")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="BåtGress" type="Sprite2D" parent="Ground"]
+position = Vector2(187.5, 71)
+texture = ExtResource("6_w1hx8")
+
+[node name="RosaTre0001Grass" type="Sprite2D" parent="Ground"]
+position = Vector2(360, 91)
+texture = ExtResource("12_dhp7p")
+
+[node name="RosaTre0002Grass" type="Sprite2D" parent="Ground"]
+position = Vector2(360, 71)
+texture = ExtResource("13_ddgkd")
+
+[node name="BakgrundRødGrønnTrær0003GressBak1" type="Sprite2D" parent="Ground"]
+position = Vector2(600, 80)
+texture = ExtResource("14_23rbu")
