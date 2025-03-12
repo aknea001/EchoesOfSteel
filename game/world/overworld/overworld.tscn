@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sj277fgp4q3m"]
+[gd_scene load_steps=20 format=3 uid="uid://cnmxlgarxsfdn"]
 
 [ext_resource type="Texture2D" uid="uid://c8pgi3oqbkl37" path="res://game/world/overworld/sprites/1.boat_scene/bakgrund_0003_himmel 2.png" id="1_qlu2e"]
 [ext_resource type="Texture2D" uid="uid://b3hyhlnhccpjj" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0005_water.png" id="2_1cbet"]
@@ -14,67 +14,120 @@
 [ext_resource type="Texture2D" uid="uid://n0p5bwx8nu30" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0001_grass.png" id="12_dhp7p"]
 [ext_resource type="Texture2D" uid="uid://vmbuaqsd7sxa" path="res://game/world/overworld/sprites/2.lake_transition/rosa_tre_0002_grass.png" id="13_ddgkd"]
 [ext_resource type="Texture2D" uid="uid://0jg7akpvkd1o" path="res://game/world/overworld/sprites/3.spruce_forest/bakgrundRødGrønnTrær_0003_gress_bak 1.png" id="14_23rbu"]
+[ext_resource type="Texture2D" uid="uid://r4puhk3jbsld" path="res://game/world/overworld/sprites/1.boat_scene/bakgrund_0000_blader_bak 2.png" id="15_ejkgi"]
+[ext_resource type="PackedScene" uid="uid://sxwxwnqvibvf" path="res://game/entities/player/player.tscn" id="15_ogfa8"]
+[ext_resource type="Texture2D" uid="uid://eh8uclwikubc" path="res://game/world/overworld/sprites/1.boat_scene/bakgrund_0002_båt 2.png" id="17_b15hh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkklm"]
+size = Vector2(344, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3akjf"]
+size = Vector2(49, 3)
 
 [node name="Overworld" type="Node2D"]
 
 [node name="Foreground" type="Node2D" parent="."]
 
 [node name="BåtVann" type="Sprite2D" parent="Foreground"]
-position = Vector2(120, 108)
+texture_filter = 1
+position = Vector2(119, 102)
 texture = ExtResource("7_5evy8")
 
 [node name="RosaTre0005Water" type="Sprite2D" parent="Foreground"]
+texture_filter = 1
 position = Vector2(359, 96)
 texture = ExtResource("2_1cbet")
 
 [node name="BakgrundRødGrønnTrær0002Gress1" type="Sprite2D" parent="Foreground"]
+texture_filter = 1
 position = Vector2(600, 101)
 texture = ExtResource("3_mec6g")
 
 [node name="Telt0000Grass1" type="Sprite2D" parent="Foreground"]
+texture_filter = 1
 position = Vector2(840, 100)
 texture = ExtResource("4_k8iyu")
 
 [node name="CaveEnerance0000Grass" type="Sprite2D" parent="Foreground"]
+texture_filter = 1
 position = Vector2(1080, 99)
 texture = ExtResource("5_5hti7")
 
 [node name="Background" type="Node2D" parent="."]
+texture_filter = 1
 
 [node name="BåtScene" type="Sprite2D" parent="Background"]
+texture_filter = 1
 position = Vector2(120, 70)
 texture = ExtResource("1_qlu2e")
 
 [node name="RosaTre" type="Sprite2D" parent="Background"]
+texture_filter = 1
 position = Vector2(360, 37)
 texture = ExtResource("2_juj45")
 
 [node name="RødGrønnTrær" type="Sprite2D" parent="Background"]
+texture_filter = 1
 position = Vector2(600, 54.5)
 texture = ExtResource("3_s4cmk")
 
 [node name="Telt0004Sky" type="Sprite2D" parent="Background"]
+texture_filter = 1
 position = Vector2(840, 57.5)
 texture = ExtResource("4_e6i1g")
 
 [node name="CaveEnerance0004Sky" type="Sprite2D" parent="Background"]
+texture_filter = 1
 position = Vector2(1080, 57.5)
 texture = ExtResource("5_fnxt0")
 
 [node name="Ground" type="Node2D" parent="."]
 
 [node name="BåtGress" type="Sprite2D" parent="Ground"]
+texture_filter = 1
 position = Vector2(187.5, 71)
 texture = ExtResource("6_w1hx8")
 
 [node name="RosaTre0001Grass" type="Sprite2D" parent="Ground"]
+texture_filter = 1
 position = Vector2(360, 91)
 texture = ExtResource("12_dhp7p")
 
 [node name="RosaTre0002Grass" type="Sprite2D" parent="Ground"]
+texture_filter = 1
 position = Vector2(360, 71)
 texture = ExtResource("13_ddgkd")
 
 [node name="BakgrundRødGrønnTrær0003GressBak1" type="Sprite2D" parent="Ground"]
+texture_filter = 1
 position = Vector2(600, 80)
 texture = ExtResource("14_23rbu")
+
+[node name="GroundCollision" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/GroundCollision"]
+position = Vector2(308, 73.5)
+shape = SubResource("RectangleShape2D_hkklm")
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="BåtSakura" type="Sprite2D" parent="Objects"]
+texture_filter = 1
+position = Vector2(185, 46)
+texture = ExtResource("15_ejkgi")
+
+[node name="Player" parent="." instance=ExtResource("15_ogfa8")]
+position = Vector2(194, 58)
+
+[node name="Extras" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Extras"]
+position = Vector2(82, 69)
+
+[node name="Båt" type="Sprite2D" parent="Extras/StaticBody2D"]
+texture_filter = 1
+texture = ExtResource("17_b15hh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Extras/StaticBody2D"]
+position = Vector2(-5.5, 2.5)
+shape = SubResource("RectangleShape2D_3akjf")
